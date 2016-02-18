@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TFG</string>
+    <string name="action_settings">Settings</string>
+    <string name="no_soporte_bt">No hay soporte para Bluetooth.</string>
+    <string name="no_bt_activado">Por favor, activa el Bluetooth.</string>
+    <string name="cv1_txt1">Cafetería RUGP</string>
+    <string name="cv1_txt2">App de gestión</string>
+    <string name="cv2_txt1">Modo Serivicio</string>
+    <string name="cv2_txt2">Comunicación con el lector</string>
+    <string name="cv3_txt1">Otras Funcionalidades</string>
+    <string name="cv3_txt2">Registros, opciones avanzadas...</string>
+</resources>
