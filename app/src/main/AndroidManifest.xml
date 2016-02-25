@@ -20,6 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OtrasFuncionalidades"
+            android:label="@string/otras_funcionalidades">
+        </activity>
+        <activity
+            android:name=".gestor_tags"
+            android:label="@string/gestion_tags">
+        </activity>
+        <activity
+            android:name=".newTagRoom"
+            android:label="@string/new_tag_room">
+        </activity>
+
     </application>
 
 </manifest>

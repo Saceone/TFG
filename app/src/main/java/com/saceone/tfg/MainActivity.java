@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.saceone.tfg.Exceptions.BluetoothNotAvaliableException;
+import com.saceone.tfg.Exceptions.BluetoothNotEnabledException;
 import com.saceone.tfg.Utils.BluetoothHelper;
 import com.saceone.tfg.Utils.ICallback;
 
@@ -37,12 +40,36 @@ public class MainActivity extends AppCompatActivity implements ICallback {
             @Override
             public void onClick(View view) {
                 try {
-                    bt.sendData("POLE");
+                    bt.sendData("WAKE_READER");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        try {
+            bt.connect();
+        } catch (BluetoothNotEnabledException e) {
+            e.printStackTrace();
+        } catch (BluetoothNotAvaliableException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        try {
+            bt.disconnect();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -68,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements ICallback {
     }
 
     public void call() {
+        Log.d("LOG: ", "CALL RECIBIDO");
         Date today = Calendar.getInstance().getTime();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         String folderName = formatter.format(today);

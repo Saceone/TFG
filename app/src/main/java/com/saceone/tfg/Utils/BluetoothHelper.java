@@ -4,7 +4,11 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
+import android.util.Log;
 
 import com.saceone.tfg.Exceptions.BluetoothNotAvaliableException;
 import com.saceone.tfg.Exceptions.BluetoothNotEnabledException;
@@ -24,8 +28,6 @@ public class BluetoothHelper {
     private OutputStream mOutputStream;
     private InputStream mInputStream;
     // Constantes
-    public static final String BT_CONNECT = "0";
-    public static final String WAKEREADER = "1";
     private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
     private static final String ADDRESS = "98:D3:31:F4:11:80";
     // Variables del handler
@@ -36,17 +38,14 @@ public class BluetoothHelper {
     // Variable de callback para poder llamar al método de la activity
     private ICallback mCallback;
 
+
     private BluetoothHelper(Activity activity) {
         // TODO: Inicializar la clase
         mCallback = (ICallback) activity;
     }
 
     public static BluetoothHelper getInstance(Activity activity) {
-        if (mBluetoothHelper == null) {
-            // Necesitamos la activity actual para cuando tengamos que iniciar diálogos (newMenu)
-            mBluetoothHelper = new BluetoothHelper(activity);
-        }
-        return mBluetoothHelper;
+        return new BluetoothHelper(activity);
     }
 
     public BluetoothAdapter getBluetoothAdapter() throws BluetoothNotEnabledException,
@@ -101,50 +100,59 @@ public class BluetoothHelper {
 
     private void beginListenForData() {
         final Handler handler = new Handler();
-        final byte delimiter = 10;
+        final byte delimiter = 10; //This is the ASCII code for a newline character
 
-        mWorkerThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (!Thread.currentThread().isInterrupted() && !mStopWorker) {
-                    try {
+        mStopWorker = false;
+        mReadBufferPosition = 0;
+        mReadBuffer = new byte[1024];
+        mWorkerThread = new Thread(new Runnable()
+        {
+            public void run()
+            {
+                while(!Thread.currentThread().isInterrupted() && !mStopWorker)
+                {
+                    try
+                    {
                         int bytesAvailable = mInputStream.available();
-
-                        if (bytesAvailable > 0) {
-                            byte[] packedBytes = new byte[bytesAvailable];
-                            mInputStream.read(packedBytes);
-
-                            for (int i = 0; i < bytesAvailable; i++) {
-                                byte b = packedBytes[i];
-
-                                if (b == delimiter) {
+                        if(bytesAvailable > 0)
+                        {
+                            byte[] packetBytes = new byte[bytesAvailable];
+                            mInputStream.read(packetBytes);
+                            for(int i=0;i<bytesAvailable;i++)
+                            {
+                                byte b = packetBytes[i];
+                                if(b == delimiter)
+                                {
                                     byte[] encodedBytes = new byte[mReadBufferPosition];
                                     System.arraycopy(mReadBuffer, 0, encodedBytes, 0, encodedBytes.length);
                                     final String data = new String(encodedBytes, "US-ASCII");
                                     mReadBufferPosition = 0;
 
-                                    handler.post(new Runnable() {
-                                        @Override
-                                        public void run() {
+                                    handler.post(new Runnable()
+                                    {
+                                        public void run()
+                                        {
+                                            mCallback.call();
                                             switch(data){
                                                 case "E9A05D35":
+                                                    break;
                                                 case "481C3BE":
-                                                    // Llama al método call() de MainActivity
-                                                    // (o cualquier activity actual que se haya
-                                                    // pasado a getInstance)
-                                                    mCallback.call();
                                                     break;
                                                 default:
                                                     break;
                                             }
                                         }
                                     });
-                                } else {
+                                }
+                                else
+                                {
                                     mReadBuffer[mReadBufferPosition++] = b;
                                 }
                             }
                         }
-                    } catch (IOException e) {
+                    }
+                    catch (IOException ex)
+                    {
                         mStopWorker = true;
                     }
                 }
@@ -153,4 +161,5 @@ public class BluetoothHelper {
 
         mWorkerThread.start();
     }
+
 }

@@ -9,4 +9,8 @@
     <string name="cv2_txt2">Comunicación con el lector</string>
     <string name="cv3_txt1">Otras Funcionalidades</string>
     <string name="cv3_txt2">Registros, opciones avanzadas...</string>
+    <string name="gestion_tags">Gestor de TAGs</string>
+    <string name="gestion_residentes">Gestor de residentes</string>
+    <string name="otras_funcionalidades">Otras funcionalidades</string>
+    <string name="new_tag_room">Añadir nuevo TAG</string>
 </resources>

@@ -1,6 +1,6 @@
 package com.saceone.tfg;
 
-import android.support.design.widget.Snackbar;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -40,15 +40,7 @@ public class MainActivityFragment extends Fragment {
         cv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    bt.connect();
-                } catch (BluetoothNotEnabledException e) {
-                    e.printStackTrace();
-                } catch (BluetoothNotAvaliableException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
             }
         });
 
@@ -71,15 +63,13 @@ public class MainActivityFragment extends Fragment {
         cv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    bt.disconnect();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Intent i = new Intent(getContext(), OtrasFuncionalidades.class);
+                startActivity(i);
             }
         });
 
 
         return view;
     }
+
 }
