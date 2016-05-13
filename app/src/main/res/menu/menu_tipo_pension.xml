@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/new_residente_media_pension"
+        android:orderInCategory="1"
+        android:title="@string/media_pension"/>
+    <item
+        android:id="@+id/new_residente_pension_completa"
+        android:orderInCategory="2"
+        android:title="@string/pension_completa"/>
+</menu>

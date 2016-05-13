@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_tagroom_modificarTAG"
+        android:orderInCategory="1"
+        android:title="@string/menu_tagroom_modificarTAG"/>
+    <item
+        android:id="@+id/menu_tagroom_eliminarTAG"
+        android:orderInCategory="3"
+        android:title="@string/menu_tagroom_eliminar"/>
+</menu>

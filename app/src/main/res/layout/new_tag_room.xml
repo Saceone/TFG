@@ -10,23 +10,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:textSize="20dp"
-        android:text="Codigo de la nueva tarjeta:"/>
+        android:text="Código de la nueva tarjeta:"/>
     <TextView
         android:id="@+id/txt_tag_new_tag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        android:hint="Pase el TAG para obtener el codigo"/>
+        android:hint="Pase el TAG para obtener el código"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Numero de habitacion"
+        android:text="Número de habitación"
         android:textSize="20dp"/>
-    <EditText
-        android:id="@+id/edtxt_room_new_tag"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/txt_room_new_tagroom"
+        android:textSize="20dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

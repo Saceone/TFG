@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app_name="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_tag_buscar_habitacion"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_search_room"
+        app_name:showAsAction="ifRoom"
+        app_name:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="@string/menu_tag_search_room"/>
+    <item
+        android:id="@+id/menu_tagroom_reset"
+        android:orderInCategory="2"
+        android:title="@string/menu_tagroom_reset"/>
+    <item
+        android:id="@+id/menu_tagroom_checkTAG"
+        android:orderInCategory="3"
+        android:title="@string/menu_tagroom_check"/>
+</menu>

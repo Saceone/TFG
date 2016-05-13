@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_bebida"
+        android:orderInCategory="1"
+        android:title="@string/bebida"/>
+    <item
+        android:id="@+id/menu_item_carne"
+        android:orderInCategory="2"
+        android:title="@string/carne" />
+    <item
+        android:id="@+id/menu_item_pescado"
+        android:orderInCategory="3"
+        android:title="@string/pescado" />
+    <item
+        android:id="@+id/menu_item_lacteos"
+        android:orderInCategory="4"
+        android:title="@string/lacteos" />
+    <item
+        android:id="@+id/menu_item_fruta"
+        android:orderInCategory="5"
+        android:title="@string/fruta" />
+    <item
+        android:id="@+id/menu_item_verduras"
+        android:orderInCategory="6"
+        android:title="@string/verdura" />
+    <item
+        android:id="@+id/menu_item_hortalizas"
+        android:orderInCategory="7"
+        android:title="@string/hortalizas" />
+    <item
+        android:id="@+id/menu_item_cereales"
+        android:orderInCategory="8"
+        android:title="@string/cereales" />
+    <item
+        android:id="@+id/menu_item_pasta"
+        android:orderInCategory="9"
+        android:title="@string/pasta" />
+    <item
+        android:id="@+id/menu_item_dulces"
+        android:orderInCategory="10"
+        android:title="@string/dulces" />
+    <item
+        android:id="@+id/menu_item_otros"
+        android:orderInCategory="11"
+        android:title="@string/otros" />
+</menu>

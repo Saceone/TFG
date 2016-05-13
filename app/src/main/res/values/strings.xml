@@ -9,8 +9,108 @@
     <string name="cv2_txt2">Comunicación con el lector</string>
     <string name="cv3_txt1">Otras Funcionalidades</string>
     <string name="cv3_txt2">Registros, opciones avanzadas...</string>
-    <string name="gestion_tags">Gestor de TAGs</string>
-    <string name="gestion_residentes">Gestor de residentes</string>
+    <string name="gestion_tags">TAGs</string>
+    <string name="gestion_residentes">Residentes</string>
     <string name="otras_funcionalidades">Otras funcionalidades</string>
     <string name="new_tag_room">Añadir nuevo TAG</string>
+    <string name="sync_espere">Sincronizando. Espere...</string>
+    <string name="sync">Sincronización</string>
+    <string name="app_description">Residencia Universitaria Gómez Pardo</string>
+    <string name="btnSettings">Opciones</string>
+    <string name="btnInstagram">Instagram</string>
+    <string name="website">Sitio Web</string>
+    <string name="service">Servicio</string>
+    <string name="btnCompras">Compras</string>
+    <string name="btnestadisticas">Estadísticas</string>
+    <string name="lista_tagroom">Relación Habitaciones - TAGs</string>
+    <string name="menu_tagroom_modificarTAG">Modificar TAG</string>
+    <string name="menu_tagroom_modificarROOM">Modificar número de habitación</string>
+    <string name="menu_tagroom_eliminar">Eliminar</string>
+    <string name="menu_tagroom_addnewtag">Añadir entrada</string>
+    <string name="menu_tagroom_reset">Resetear lista</string>
+    <string name="nombre">Nombre...</string>
+    <string name="apellidos">Apellidos...</string>
+    <string name="habitacion">Habitación...</string>
+    <string name="pension">Tipo de pensión...</string>
+    <string name="notas">Notas...</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="asignar_recarga">Asignar menús y desayunos correspondientes a un trimestre</string>
+    <string name="lista_residentes">Residentes</string>
+    <string name="menu_residente_view_add">Añadir residente</string>
+    <string name="menu_residente_view_modify">Modificar residente</string>
+    <string name="menu_residente_view_delete">Eliminar residente</string>
+    <string name="menus">Menús: </string>
+    <string name="desayunos">Desayunos: </string>
+    <string name="default_menus">90</string>
+    <string name="default_desayunos">60</string>
+    <string name="media_pension">Media pensión</string>
+    <string name="pension_completa">Pensión completa</string>
+    <string name="menu_residente_deleteAll">Resetear lista de residentes</string>
+    <string name="menu_residente_giveTickets">Ronda de tickets (media pensión)</string>
+    <string name="menu_residente_search">Buscar</string>
+    <string name="menu_residente_search_room">Buscar por habitación</string>
+    <string name="menu_residente_search_person">Buscar residente</string>
+    <string name="menu_tag_search_room">Buscar habitación</string>
+    <string name="menu_tagroom_addTAG">Introducir TAG</string>
+    <string name="menu_tagroom_check">Comprobar TAG</string>
+    <string name="listacompra">Lista de la compra</string>
+    <string name="menu_listacompra_borrar">Borrar</string>
+    <string name="carne">Carne</string>
+    <string name="pescado">Pescado</string>
+    <string name="lacteos">Lácteos y Huevos</string>
+    <string name="fruta">Fruta</string>
+    <string name="verdura">Verduras</string>
+    <string name="hortalizas">Hortalizas</string>
+    <string name="bebida">Bebidas</string>
+    <string name="cereales">Pan y cereales</string>
+    <string name="pasta">Pasta</string>
+    <string name="dulces">Dulces</string>
+    <string name="otros">Otros</string>
+    <string name="menu_new_item_accept">Aceptar</string>
+    <string name="activar_bt">Activar</string>
+    <string name="connect_bt">Reintentar</string>
+    <string name="historial_registro">HISTORIAL</string>
+    <string-array name="categorias_compra">
+        <item>Bebidas</item>
+        <item>Carne</item>
+        <item>Pescado</item>
+        <item>Lácteos y Huevos</item>
+        <item>Fruta</item>
+        <item>Verduras</item>
+        <item>Hortalizas</item>
+        <item>Pan y Cereales</item>
+        <item>Pasta</item>
+        <item>Dulces</item>
+        <item>Otros</item>
+    </string-array>
+    <string-array name="grafica_tipo">
+        <item>Desayunos</item>
+        <item>Comidas</item>
+        <item>Cenas</item>
+        <item>Todo</item>
+    </string-array>
+    <string-array name="grafica_tipo_ifTarta">
+        <item>Todo</item>
+    </string-array>
+    <string-array name="grafica_tipo_ifCustomDay">
+        <item>Todo</item>
+    </string-array>
+    <string-array name="grafica_periodo">
+        <item>Hoy</item>
+        <item>Última semana</item>
+        <item>Último mes</item>
+        <item>Último año</item>
+        <item>Seleccionar día...</item>
+    </string-array>
+    <string-array name="grafica_periodo_ifTarta">
+        <item>Hoy</item>
+        <item>Siempre</item>
+        <item>Seleccionar día...</item>
+    </string-array>
+    <string-array name="grafica_estilo">
+        <item>Líneas</item>
+        <item>Barras</item>
+        <item>Tarta</item>
+    </string-array>
 </resources>

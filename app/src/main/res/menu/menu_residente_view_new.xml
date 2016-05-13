@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app_name="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_residente_view_add"
+        android:orderInCategory="1"
+        app_name:showAsAction="ifRoom"
+        android:icon="@drawable/ic_person_add"
+        android:title="@string/menu_residente_view_add"/>
+</menu>

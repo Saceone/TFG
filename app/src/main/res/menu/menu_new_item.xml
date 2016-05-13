@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app_name="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_new_item_accept"
+        android:orderInCategory="1"
+        app_name:showAsAction="ifRoom"
+        android:icon="@drawable/ic_tick"
+        android:title="@string/menu_new_item_accept"/>
+</menu>

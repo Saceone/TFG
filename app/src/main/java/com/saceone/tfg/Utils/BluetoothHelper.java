@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.util.Log;
 
@@ -20,8 +17,6 @@ import java.util.Set;
 import java.util.UUID;
 
 public class BluetoothHelper {
-    // Instancia única de la clase (patrón Singleton)
-    private static BluetoothHelper mBluetoothHelper;
     // BluetoothSocket
     private BluetoothSocket mBluetoothSocket;
     // Output y Input streams
@@ -62,26 +57,33 @@ public class BluetoothHelper {
         }
     }
 
-    public boolean checkBluetoothState() throws BluetoothNotEnabledException,
-                                                BluetoothNotAvaliableException {
-        if (getBluetoothAdapter() == null) {
-            return false;
-        } else {
-            return getBluetoothAdapter().isEnabled();
-        }
-    }
-
     public void connect() throws BluetoothNotEnabledException, BluetoothNotAvaliableException,
                                  IOException {
+
         Set<BluetoothDevice> pairedDevices = getBluetoothAdapter().getBondedDevices();
 
         if (pairedDevices.size() > 0) {
             for (BluetoothDevice device : pairedDevices) {
-                mBluetoothSocket = device.createRfcommSocketToServiceRecord(MY_UUID);
-                mBluetoothSocket.connect();
-                mOutputStream = mBluetoothSocket.getOutputStream();
-                mInputStream = mBluetoothSocket.getInputStream();
-                break;
+                if(device.getAddress().equals(ADDRESS))
+                {
+                    mBluetoothSocket = device.createRfcommSocketToServiceRecord(MY_UUID);
+                    try{
+                        mBluetoothSocket.connect();
+
+                    } catch (IOException e) {
+                        //TODO: el motivo de este catch (por qué no conecta la primera) está sacado de aquí: http://stackoverflow.com/a/25647197
+                        //Viene a decir que <4.2 entra por el .connect() primario, pero a partir de 4.2 el stack cambia y hay que hacerlo de este metodo
+                        Log.d("LOG: ", "Error en la conexión primaria: "+e.getMessage());
+                        try {
+                            Log.d("LOG: ", "Intentando conexión secundaria...");
+                            mBluetoothSocket.connect();
+                            Log.d("LOG: ", "Conectado");
+                        } catch (Exception e2) {
+                            Log.d("LOG: ", "No se ha podido establecer la conexión al bluetooh");
+                        }
+                    break;
+                    }
+                }
             }
         }
         beginListenForData();
@@ -95,6 +97,7 @@ public class BluetoothHelper {
 
     public void sendData(String message) throws IOException{
         String data = message.concat("$");
+        mOutputStream = mBluetoothSocket.getOutputStream();
         mOutputStream.write(data.getBytes());
     }
 
@@ -113,6 +116,7 @@ public class BluetoothHelper {
                 {
                     try
                     {
+                        mInputStream = mBluetoothSocket.getInputStream();
                         int bytesAvailable = mInputStream.available();
                         if(bytesAvailable > 0)
                         {
@@ -132,15 +136,7 @@ public class BluetoothHelper {
                                     {
                                         public void run()
                                         {
-                                            mCallback.call();
-                                            switch(data){
-                                                case "E9A05D35":
-                                                    break;
-                                                case "481C3BE":
-                                                    break;
-                                                default:
-                                                    break;
-                                            }
+                                            mCallback.call(data);
                                         }
                                     });
                                 }

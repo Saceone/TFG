@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="ddbs-0.0.5">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.athingunique/ddbs/0.0.5/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.athingunique/ddbs/0.0.5/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.athingunique/ddbs/0.0.5/65b9435ed6e0ae2a94ca82491248bc70b45965b2/ddbs-0.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

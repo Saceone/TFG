@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app_name="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_residente_view_modify"
+        android:orderInCategory="1"
+        app_name:showAsAction="ifRoom"
+        android:icon="@drawable/ic_edit"
+        android:title="@string/menu_residente_view_modify"/>
+    <item
+        android:id="@+id/menu_residente_view_delete"
+        android:orderInCategory="2"
+        app_name:showAsAction="ifRoom"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/menu_residente_view_delete"/>
+    <item
+        android:id="@+id/menu_residente_view_history"
+        android:orderInCategory="3"
+        android:title="Ver historial"/>
+</menu>

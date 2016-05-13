@@ -15,6 +15,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        //TODO: importar achartengine (2/2) http://stackoverflow.com/a/25020613
+        maven {
+            url "https://repository-achartengine.forge.cloudbees.com/snapshot/"
+        }
     }
 }
 

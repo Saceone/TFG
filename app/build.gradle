@@ -26,4 +26,13 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:cardview-v7:23.0.+'
     compile 'com.android.support:recyclerview-v7:23.0.+'
+    compile 'com.koushikdutta.ion:ion:2.+'
+    //TODO: importar achartengine (2/2) http://stackoverflow.com/a/25020613
+    compile 'org.achartengine:achartengine:1.2.0'
+    //TODO: importar Google Drive API https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project
+    compile 'com.google.android.gms:play-services:7.8.+'
+    //TODO: importar DriveDatabaseSync: https://github.com/athingunique/Drive-Database-Sync
+    compile 'com.github.athingunique:ddbs:0.0.5@aar'
+
+
 }

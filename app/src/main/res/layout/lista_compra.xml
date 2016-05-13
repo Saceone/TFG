@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_listacompra"
+            android:padding="30dp"
+            android:layout_marginTop="16dp"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:text="@string/listacompra"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_listacompra_categoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            />
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_listacompra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        android:clickable="true"
+        app:layout_anchor="@id/rv_listacompra_categoria"
+        app:layout_anchorGravity="bottom|center"/>
+
+</android.support.design.widget.CoordinatorLayout>

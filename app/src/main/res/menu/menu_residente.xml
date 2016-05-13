@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app_name="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_residente_buscar_habitacion"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_search_room"
+        app_name:showAsAction="ifRoom"
+        app_name:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="@string/menu_residente_search_room"/>
+    <item
+        android:id="@+id/menu_residente_deleteAll"
+        android:orderInCategory="2"
+        android:title="@string/menu_residente_deleteAll"/>
+    <item
+        android:id="@+id/menu_residente_giveTickets"
+        android:orderInCategory="3"
+        android:title="@string/menu_residente_giveTickets"/>
+    <item
+        android:id="@+id/menu_residente_changeRoom"
+        android:orderInCategory="4"
+        android:title="Cambio de habitación"/>
+</menu>

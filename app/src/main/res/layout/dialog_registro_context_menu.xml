@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:padding="10dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:layout_marginLeft="10dp"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_dialog_registro_ver"
+        android:text="Ver registro"/>
+    <Button
+        android:layout_marginLeft="10dp"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_dialog_registro_ver_todo"
+        android:text="Ver historial del residente"/>
+    <Button
+        android:layout_marginLeft="10dp"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_dialog_registro_eliminar"
+        android:text="Eliminar registro"/>
+
+</LinearLayout>
