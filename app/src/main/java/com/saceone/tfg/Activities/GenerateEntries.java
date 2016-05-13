@@ -1,6 +1,5 @@
 package com.saceone.tfg.Activities;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -8,16 +7,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import com.saceone.tfg.Adapters.GenerarRegistrosAdapter;
 import com.saceone.tfg.Adapters.ResidentesAdapter;
 import com.saceone.tfg.Classes.Residente;
 import com.saceone.tfg.R;
