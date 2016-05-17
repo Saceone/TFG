@@ -259,10 +259,16 @@ public class gestor_residentes extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
                     for(Residente residente : mediaPension){
-                        int nuevos_menus = residente.getMenus_restantes() + Integer.parseInt(menus.getText().toString());
-                        int nuevos_desayunos = residente.getDesayunos_restantes() + Integer.parseInt(desayunos.getText().toString());
-                        db.modifyRESIDENTE(residente.getId(),residente.getNombre(),residente.getApellidos(),residente.getRoom(),
-                                residente.getTipo_pension(),nuevos_desayunos,nuevos_menus,residente.getNotas());
+                        int nuevos_menus = residente.getMenus_restantes();
+                        int nuevos_desayunos = residente.getDesayunos_restantes();
+                        if(!menus.getText().toString().equals("")){
+                            nuevos_menus += Integer.parseInt(menus.getText().toString());
+                        }
+                        if(!desayunos.getText().toString().equals("")){
+                            nuevos_desayunos += Integer.parseInt(desayunos.getText().toString());
+                        }
+                        db.modifyRESIDENTE(residente.getId(), residente.getNombre(), residente.getApellidos(), residente.getRoom(),
+                                residente.getTipo_pension(), nuevos_desayunos, nuevos_menus,residente.getNotas());
                     }
                     dialog.dismiss();
                 }
