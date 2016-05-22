@@ -46,7 +46,7 @@
                             android:orientation="vertical"
                             android:padding="4dp">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
                                 <Button
                                     android:layout_width="match_parent"
@@ -55,6 +55,7 @@
                                     android:background="?attr/selectableItemBackground" 
                                     android:id="@+id/btn_estadisticas_all_entries"
                                     android:text="   Ver historial de registros"
+                                    android:textAlignment="viewStart"
                                     android:drawableLeft="@drawable/ic_registros"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -75,7 +76,7 @@
                             android:orientation="vertical"
                             android:padding="4dp">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
                                 <Button
                                     android:layout_width="match_parent"
@@ -84,6 +85,7 @@
                                     android:background="?attr/selectableItemBackground" 
                                     android:id="@+id/btn_estadisticas_new_report"
                                     android:text="   Actualizar ficheros de registro"
+                                    android:textAlignment="viewStart"
                                     android:drawableLeft="@drawable/ic_new_report"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -104,7 +106,7 @@
                             android:padding="4dp"
                             android:orientation="vertical">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
                                 <Button
                                     android:layout_width="match_parent"
@@ -113,6 +115,7 @@
                                     android:background="?attr/selectableItemBackground" 
                                     android:id="@+id/btn_estadisticas_view_report"
                                     android:text="   Ver últimas copias de seguridad"
+                                    android:textAlignment="viewStart"
                                     android:drawableLeft="@drawable/ic_view_report"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -154,7 +157,7 @@
                             android:orientation="vertical"
                             android:padding="4dp">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
                                 <Button
                                     android:layout_width="match_parent"
@@ -163,6 +166,7 @@
                                     android:background="?attr/selectableItemBackground" 
                                     android:id="@+id/btn_estadisticas_ver_estadisticas"
                                     android:text="   Ver estadísticas"
+                                    android:textAlignment="viewStart"
                                     android:drawableLeft="@drawable/ic_estadisticas"/>
                             </LinearLayout>
                         </LinearLayout>
@@ -204,7 +208,7 @@
                             android:orientation="vertical"
                             android:padding="4dp">
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
                                 <Button
                                     android:layout_width="match_parent"
@@ -213,7 +217,59 @@
                                     android:background="?attr/selectableItemBackground"
                                     android:id="@+id/btn_estadisticas_ver_listacompra"
                                     android:text="   Ver lista de la compra"
-                                    android:drawableLeft="@drawable/ic_listacompra"/>
+                                    android:textAlignment="viewStart"
+                                    android:drawableLeft="@drawable/ic_cart"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="RESTAURACIÓN"
+                        android:textSize="15dp"
+                        android:background="@android:color/holo_blue_light"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="4dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"
+                            android:background="@android:color/holo_green_dark"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="4dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:id="@+id/btn_estadisticas_reset"
+                                    android:text="   Restaurar datos"
+                                    android:textAlignment="viewStart"
+                                    android:drawableLeft="@drawable/ic_restore"/>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.CheckBox;
 
 import com.saceone.tfg.Classes.Registro;
 import com.saceone.tfg.R;
@@ -37,6 +38,7 @@ public class Estadisticas extends AppCompatActivity {
     Button btn_view_report;
     Button btn_view_statistics;
     Button btn_view_shoppinglist;
+    Button btn_restore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class Estadisticas extends AppCompatActivity {
         btn_view_report = (Button)findViewById(R.id.btn_estadisticas_view_report);
         btn_view_statistics = (Button)findViewById(R.id.btn_estadisticas_ver_estadisticas);
         btn_view_shoppinglist = (Button)findViewById(R.id.btn_estadisticas_ver_listacompra);
+        btn_restore = (Button)findViewById(R.id.btn_estadisticas_reset);
 
         btn_view_all_entries.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,6 +240,71 @@ public class Estadisticas extends AppCompatActivity {
                     }
                 });
                 adb.create().show();
+            }
+        });
+
+        btn_restore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(Estadisticas.this);
+                dialog.setTitle("Restaurar datos de fabrica");
+
+                dialog.setContentView(R.layout.dialog_restore_data);
+                final CheckBox chkRegistros = (CheckBox)dialog.findViewById(R.id.chk_dialog_reset_registros);
+                final CheckBox chkHorarios = (CheckBox)dialog.findViewById(R.id.chk_dialog_reset_horarios);
+                final CheckBox chkAdmin = (CheckBox)dialog.findViewById(R.id.chk_dialog_reset_admin);
+                final CheckBox chkMediaPension = (CheckBox)dialog.findViewById(R.id.chk_dialog_reset_media_pension);
+                Button btnCancel = (Button)dialog.findViewById(R.id.btn_dialog_restore_cancel);
+                Button btnSubmit = (Button)dialog.findViewById(R.id.btn_dialog_restore_submit);
+
+                btnCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                btnSubmit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final boolean registros = chkRegistros.isChecked();
+                        final boolean horarios = chkHorarios.isChecked();
+                        final boolean admin = chkAdmin.isChecked();
+                        final boolean media = chkMediaPension.isChecked();
+                        if(registros||horarios||admin||media){
+                            StringBuilder msg = new StringBuilder();
+                            msg.append("Se restaurará: ");
+                            if(registros) msg.append("\n- Registros");
+                            if(horarios)  msg.append("\n- Horarios");
+                            if(admin)     msg.append("\n- Contraseña");
+                            if(media)     msg.append("\n- Media pensión");
+                            AlertDialog adb = new AlertDialog.Builder(Estadisticas.this)
+                                    .setTitle("Restaurar datos")
+                                    .setMessage(msg.toString())
+                                    .setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface alertDialog, int which) {
+                                            alertDialog.dismiss();
+                                        }
+                                    })
+                                    .setPositiveButton("ACEPTAR", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface alertDialog, int which) {
+                                            if(registros) db.resetREGISTROS();
+                                            if(horarios)  db.resetTimeLimits();
+                                            if(admin)     db.resetADMIN();
+                                            if(media)     db.resetMEDIAPENSION();
+                                            alertDialog.dismiss();
+                                            dialog.dismiss();
+                                        }
+                                    }).create();
+                            adb.show();
+                        }
+                        else{
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                dialog.show();
             }
         });
 

@@ -59,21 +59,28 @@
                     android:text="Nombre"
                     android:gravity="center"
                     android:layout_marginTop="10dp"
-                    android:textSize="30dp"/>
+                    android:textSize="25dp"/>
                 <TextView
                     android:id="@+id/txt_dialog_consumicion_room"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Habitación"
                     android:gravity="center"
-                    android:textSize="25dp"/>
+                    android:textSize="20dp"/>
                 <TextView
                     android:id="@+id/txt_dialog_consumicion_pension"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pensión"
                     android:gravity="center"
-                    android:textSize="20dp"/>
+                    android:textSize="15dp"/>
+                <TextView
+                    android:id="@+id/txt_dialog_consumicion_notas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Notas"
+                    android:gravity="center"
+                    android:textSize="15dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

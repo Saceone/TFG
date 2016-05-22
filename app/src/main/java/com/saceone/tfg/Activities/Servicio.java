@@ -161,7 +161,6 @@ public class Servicio extends AppCompatActivity implements ICallback {
         LinearLayoutManager llm_tagroom = new LinearLayoutManager(this);
         llm_tagroom.setOrientation(LinearLayoutManager.VERTICAL);
         rv_registro.setLayoutManager(llm_tagroom);
-
     }
 
     @Override
@@ -367,6 +366,7 @@ public class Servicio extends AppCompatActivity implements ICallback {
         TextView txtNombre = (TextView) dialog.findViewById(R.id.txt_dialog_consumicion_nombre);
         TextView txtRoom = (TextView) dialog.findViewById(R.id.txt_dialog_consumicion_room);
         TextView txtPension = (TextView) dialog.findViewById(R.id.txt_dialog_consumicion_pension);
+        TextView txtNotas = (TextView) dialog.findViewById(R.id.txt_dialog_consumicion_notas);
         LinearLayout lv_menus = (LinearLayout) dialog.findViewById(R.id.lv_menus);
         TextView txtMenusRestantes = (TextView) dialog.findViewById(R.id.txt_dialog_consumicion_menus_restantes);
         final TextView txtMenusNuevos = (TextView) dialog.findViewById(R.id.txt_dialog_consumicion_menus_nuevos);
@@ -422,10 +422,13 @@ public class Servicio extends AppCompatActivity implements ICallback {
         String apellidos = residente.getApellidos();
         int room = residente.getRoom();
         String pension = residente.getTipo_pension();
+        String notas = residente.getNotas();
 
         txtNombre.setText(nombre + " " + apellidos);
         txtRoom.setText("Habitación: "+room);
         txtPension.setText(pension);
+        if(!notas.equals("")) txtNotas.setText(notas);
+        else txtNotas.setVisibility(View.GONE);
 
         if(pension.equals("Media pensión")){
             int menus = residente.getMenus_restantes();
